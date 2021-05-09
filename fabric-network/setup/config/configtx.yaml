@@ -327,28 +327,8 @@ Profiles:
                   Port: 7050
                   ClientTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer.alanhou.org/tls/server.crt
                   ServerTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer.alanhou.org/tls/server.crt
-                - Host: orderer2.alanhou.org
-                  Port: 8050
-                  ClientTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer2.alanhou.org/tls/server.crt
-                  ServerTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer2.alanhou.org/tls/server.crt
-                - Host: orderer3.alanhou.org
-                  Port: 9050
-                  ClientTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer3.alanhou.org/tls/server.crt
-                  ServerTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer3.alanhou.org/tls/server.crt
-                # - Host: orderer4.alanhou.org
-                #   Port: 10050
-                #   ClientTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer4.alanhou.org/tls/server.crt
-                #   ServerTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer4.alanhou.org/tls/server.crt
-                # - Host: orderer5.alanhou.org
-                #   Port: 11050
-                #   ClientTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer5.alanhou.org/tls/server.crt
-                #   ServerTLSCert: ../crypto-config/ordererOrganizations/alanhou.org/orderers/orderer5.alanhou.org/tls/server.crt
             Addresses:
                 - orderer.alanhou.org:7050
-                - orderer2.alanhou.org:8050
-                - orderer3.alanhou.org:9050
-                # - orderer4.alanhou.org:10050
-                # - orderer5.alanhou.org:11050
 
             Organizations:
             - *OrdererOrg
