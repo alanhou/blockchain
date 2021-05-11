@@ -1,0 +1,62 @@
+{
+    "name": "first-network-org1",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Org1": {
+            "mspid": "Org1MSP",
+            "peers": [
+                "peer0.org1.alanhou.org",
+                "peer1.org1.alanhou.org"
+            ],
+            "certificateAuthorities": [
+                "ca.org1.alanhou.org"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.org1.alanhou.org": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICWDCCAf2gAwIBAgIQQ0Swc77e9saSDEmxcGxbbjAKBggqhkjOPQQDAjB2MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5hbGFuaG91Lm9yZzEfMB0GA1UEAxMWdGxz\nY2Eub3JnMS5hbGFuaG91Lm9yZzAeFw0yMTA1MTEwNDU5MDBaFw0zMTA1MDkwNDU5\nMDBaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH\nEw1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmFsYW5ob3Uub3JnMR8wHQYD\nVQQDExZ0bHNjYS5vcmcxLmFsYW5ob3Uub3JnMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEXIWFfEwhzpons17Zq0nQ9lrvKH6CpOSLAqPSRdR3o7ffIXWZuckYCva5\nOu10SsAASqNasVv77FXtptmrf3jk96NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1Ud\nJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1Ud\nDgQiBCDaF3XFOhmqRUOJmnblC75w457moxdnZk95NuERbW8MbzAKBggqhkjOPQQD\nAgNJADBGAiEAkg3vdyvFGeMIi7umsFIQFPawN32ppEjbV3+4rw3BdvoCIQDECa4Y\nXpUXFeBhp4XbG/vdW9HdV/sLb+i81yA5gnGFew==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.org1.alanhou.org",
+                "hostnameOverride": "peer0.org1.alanhou.org"
+            }
+        },
+	"peer1.org1.alanhou.org": {
+            "url": "grpcs://localhost:8051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICWDCCAf2gAwIBAgIQQ0Swc77e9saSDEmxcGxbbjAKBggqhkjOPQQDAjB2MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5hbGFuaG91Lm9yZzEfMB0GA1UEAxMWdGxz\nY2Eub3JnMS5hbGFuaG91Lm9yZzAeFw0yMTA1MTEwNDU5MDBaFw0zMTA1MDkwNDU5\nMDBaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH\nEw1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmFsYW5ob3Uub3JnMR8wHQYD\nVQQDExZ0bHNjYS5vcmcxLmFsYW5ob3Uub3JnMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEXIWFfEwhzpons17Zq0nQ9lrvKH6CpOSLAqPSRdR3o7ffIXWZuckYCva5\nOu10SsAASqNasVv77FXtptmrf3jk96NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1Ud\nJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1Ud\nDgQiBCDaF3XFOhmqRUOJmnblC75w457moxdnZk95NuERbW8MbzAKBggqhkjOPQQD\nAgNJADBGAiEAkg3vdyvFGeMIi7umsFIQFPawN32ppEjbV3+4rw3BdvoCIQDECa4Y\nXpUXFeBhp4XbG/vdW9HdV/sLb+i81yA5gnGFew==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.org1.alanhou.org",
+                "hostnameOverride": "peer1.org1.alanhou.org"
+            }
+        }
+
+	
+    },
+    "certificateAuthorities": {
+        "ca.org1.alanhou.org": {
+            "url": "https://localhost:7054",
+            "caName": "ca.org1.alanhou.org",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICWDCCAf2gAwIBAgIQQ0Swc77e9saSDEmxcGxbbjAKBggqhkjOPQQDAjB2MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5hbGFuaG91Lm9yZzEfMB0GA1UEAxMWdGxz\nY2Eub3JnMS5hbGFuaG91Lm9yZzAeFw0yMTA1MTEwNDU5MDBaFw0zMTA1MDkwNDU5\nMDBaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH\nEw1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmFsYW5ob3Uub3JnMR8wHQYD\nVQQDExZ0bHNjYS5vcmcxLmFsYW5ob3Uub3JnMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEXIWFfEwhzpons17Zq0nQ9lrvKH6CpOSLAqPSRdR3o7ffIXWZuckYCva5\nOu10SsAASqNasVv77FXtptmrf3jk96NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1Ud\nJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1Ud\nDgQiBCDaF3XFOhmqRUOJmnblC75w457moxdnZk95NuERbW8MbzAKBggqhkjOPQQD\nAgNJADBGAiEAkg3vdyvFGeMIi7umsFIQFPawN32ppEjbV3+4rw3BdvoCIQDECa4Y\nXpUXFeBhp4XbG/vdW9HdV/sLb+i81yA5gnGFew==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

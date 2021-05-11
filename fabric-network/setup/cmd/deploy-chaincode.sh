@@ -56,7 +56,7 @@ presetup() {
 
 CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="1"
+VERSION="1" # increase this number while upgrading
 CC_SRC_PATH="../chaincode/fabcar/go"
 CC_NAME="fabcar"
 

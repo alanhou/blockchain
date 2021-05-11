@@ -1,0 +1,155 @@
+name: "Basic"
+x-type: "hlfv1"
+description: "Basic network"
+version: "1.0"
+channels:
+  mychannel:
+    orderers:
+      - orderer.alanhou.org
+
+    peers:
+      peer0.org1.alanhou.org:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+      peer1.org1.alanhou.org:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+      peer0.org2.alanhou.org:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+      peer1.org2.alanhou.org:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+    chaincodes:
+      - mycc:v0
+
+organizations:
+  Org1:
+    mspid: Org1MSP
+
+    peers:
+      - peer0.org1.alanhou.org
+      - peer1.org1.alanhou.org
+
+    certificateAuthorities:
+      - ca.org1.alanhou.org
+
+    adminPrivateKey:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org1.alanhou.org/users/Admin@org1.alanhou.org/msp/keystore/priv_sk
+    signedCert:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org1.alanhou.org/users/Admin@org1.alanhou.org/msp/signcerts/Admin@org1.alanhou.org-cert.pem
+
+  Org2:
+    mspid: Org2MSP
+
+    peers:
+      - peer0.org2.alanhou.org
+      - peer1.org2.alanhou.org
+
+    certificateAuthorities:
+      - ca.org2.alanhou.org
+
+    adminPrivateKey:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org2.alanhou.org/users/Admin@org2.alanhou.org/msp/keystore/priv_sk
+    signedCert:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org2.alanhou.org/users/Admin@org2.alanhou.org/msp/signcerts/Admin@org2.alanhou.org-cert.pem
+
+orderers:
+  orderer.alanhou.org:
+    url: grpcs://localhost:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/ordererOrganizations/alanhou.org/orderers/orderer.alanhou.org/tls/ca.crt
+
+  orderer2.alanhou.org:
+    url: grpcs://localhost:8050
+    grpcOptions:
+      ssl-target-name-override: orderer2.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/ordererOrganizations/alanhou.org/orderers/orderer2.alanhou.org/tls/ca.crt
+
+  orderer3.alanhou.org:
+    url: grpcs://localhost:9050
+    grpcOptions:
+      ssl-target-name-override: orderer3.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/ordererOrganizations/alanhou.org/orderers/orderer3.alanhou.org/tls/ca.crt
+
+#
+# List of peers to send various requests to, including endorsement, query
+# and event listener registration.
+#
+peers:
+  peer0.org1.alanhou.org:
+    url: grpcs://localhost:7051
+
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org1.alanhou.org/peers/peer0.org1.alanhou.org/tls/ca.crt
+
+  peer1.org1.alanhou.org:
+    url: grpcs://localhost:8051
+
+    grpcOptions:
+      ssl-target-name-override: peer1.org1.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org1.alanhou.org/peers/peer1.org1.alanhou.org/tls/ca.crt
+
+  peer0.org2.alanhou.org:
+    url: grpcs://localhost:9051
+
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org2.alanhou.org/peers/peer0.org2.alanhou.org/tls/ca.crt
+
+  peer1.org2.alanhou.org:
+    url: grpcs://localhost:10051
+
+    grpcOptions:
+      ssl-target-name-override: peer1.org2.alanhou.org
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org2.alanhou.org/peers/peer1.org2.alanhou.org/tls/ca.crt
+#
+# Fabric-CA is a special kind of Certificate Authority provided by Hyperledger Fabric which allows
+# certificate management to be done via REST APIs. Application may choose to use a standard
+# Certificate Authority instead of Fabric-CA, in which case this section would not be specified.
+#
+certificateAuthorities:
+  ca.org1.alanhou.org:
+    url: https://localhost:7054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org1.alanhou.org/ca/ca.org1.alanhou.org-cert.pem
+
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+    caName: ca.org1.alanhou.org
+
+  ca.org2.alanhou.org:
+    url: https://localhost:8054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: ../../fabric-network/setup/crypto-config/peerOrganizations/org2.alanhou.org/ca/ca.org2.alanhou.org-cert.pem
+
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+    caName: ca.org2.alanhou.org

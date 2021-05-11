@@ -1,0 +1,69 @@
+{
+	"name": "first network (ignored)",
+	"version": "1.0.0",
+	"license": "Apache-2.0",
+	"client": {
+		"tlsEnable": true,
+		"caCredential": {
+			"id": "admin",
+			"password": "adminpw"
+		},
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw",
+			"affiliation": "org1.department1"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.org1.alanhou.org": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/org1.alanhou.org/users/Admin@org1.alanhou.org/msp/keystore/priv_sk"
+			},
+			"peers": [
+				"peer0.org1.alanhou.org"
+			],
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/org1.alanhou.org/users/Admin@org1.alanhou.org/msp/signcerts/Admin@org1.alanhou.org-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.org1.alanhou.org": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/org1.alanhou.org/peers/peer0.org1.alanhou.org/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.org1.alanhou.org:7051",
+			"eventUrl": "grpcs://peer0.org1.alanhou.org:7053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org1.alanhou.org"
+			}
+		}
+	}
+}
