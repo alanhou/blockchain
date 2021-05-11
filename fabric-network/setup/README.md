@@ -11,6 +11,24 @@
 ### createChannel && joinChannel && updateAnchorPeers
 `cmd/create-channel.sh`
 
+### deploy chain code
+`cmd/deploy-chaincode.sh`
+
 ### fabcar sample chaincode
 fabric-demo/fabric-samples/chaincode/fabcar/go/
 
+### create certificate through customized script
+```
+cd create-certificate-with-ca
+docker-compose up -d
+./create-certificate-with-ca.sh
+cp crypto-config-ca ../crypto-config
+```
+now you get the same thing as from the cryptogen command execution, now comment the lines to cryptogen command line in cmd/create-artifacts.sh, you'll get the same services up and running as before
+```
+cd ..
+cmd/create-artifacts.sh
+docker-compose up -d
+cmd/create-channel.sh
+cmd/deploy-chaincode.sh
+```
