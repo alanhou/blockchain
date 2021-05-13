@@ -22,3 +22,9 @@ docker-compose up -d
 
 ## fabric-network
 
+## fabirc-go-sdk
+
+[Hyperledger Fabric v2.x之 Go SDK 实战](https://alanhou.org/hyperledger-fabric-go-sdk)配套学习代码
+
+## fabric-chaincode-development
+[Golang开发Hyperledger Fabric 2.x链码](https://alanhou.org/golang-hyperledger-fabric-chaincode)配套代码
