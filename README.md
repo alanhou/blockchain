@@ -1,5 +1,7 @@
 ## fabric-setup 学习
 
+[区块链之Hyperledger Fabric学习笔记](https://alanhou.org/hyperledger-fabric/)
+
 1、Fabric节点创建(fabric-setup/duonodes)
 ```
 # 生成证书
@@ -21,6 +23,9 @@ docker-compose up -d
 ```
 
 ## fabric-network
+
+* [Hyperledger Fabric v2.x基础网络开发-安装篇](https://alanhou.org/create-basic-network-with-hyperledger-fabric-v2-installation/)
+* [Hyperledger Fabric v2.x基础网络开发-API篇](https://alanhou.org/create-basic-network-with-hyperledger-fabric-v2-network/)
 
 ## fabirc-go-sdk
 
